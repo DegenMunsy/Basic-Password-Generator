@@ -1,7 +1,5 @@
-// Variable to start gathering data from button click
+// Variable to start gathering data from confirms
 var generateBtn = document.querySelector("#generate");
-
-// Variable to connect the password to the text area
 
 
 // Write password to the password input
@@ -10,7 +8,6 @@ function writePassword() {
   var passwordSpot = document.querySelector('#password');
   passwordSpot.value = password
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -35,12 +32,7 @@ function generatePW(){
   // Variable to store selections
   var characterSelections = ''
   var newPassW = ''
-  
-  // User must confirm at least one character type or alert will pop up
-  // if(!confirmUppercase && !confirmLowercase && !confirmNumbers && !confirmSpecials) {
-  //   alert("Confirm at least one charcter type");
-  // }
-  // IF character is chosen, add selected variable to the pot
+// if statements for character selections
   if(isSpecials === true){
     characterSelections = characterSelections.concat(specys)
   }
@@ -62,16 +54,10 @@ function generatePW(){
   }
   // formula to sort through selections then generate password
   for (var i = 0; i < passwordLength; i++) {
-    // password += avaibleCharacters.charAt(Math.floor(Math.random() * avaibleCharacters.length));
     newPassW = newPassW.concat(characterSelections.charAt(random(characterSelections.length-1)))
   }
 
   return newPassW
-  // variable to store the password of selected characters 
-  // var password = ''
-
-  // connects the text to the password
-  // passwordSpot.innerText = password;
 }
 
 
